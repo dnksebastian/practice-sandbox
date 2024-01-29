@@ -27,7 +27,6 @@ button {
 }
 
 /* navbar */
-
 header nav {
   display: flex;
   gap: 16px;
@@ -53,7 +52,6 @@ main {
   max-width: 1200px;
   margin: 40px auto;
 }
-
 
 /* help layout */
 
