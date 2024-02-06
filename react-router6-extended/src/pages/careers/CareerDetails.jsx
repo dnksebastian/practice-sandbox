@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from 'react-router-dom'
 
 export default function CareerDetails() {
+  // eslint-disable-next-line no-unused-vars
   const { id } = useParams()
   const career = useLoaderData()
 
@@ -22,6 +23,10 @@ export const careerDetailsLoader = async ({ params }) => {
   const { id } = params
 
   const res = await fetch('http://localhost:4000/careers/' + id)
+
+  if (!res.ok) {
+    throw Error('Could not find that career.')
+  }
 
   return res.json()
 }
