@@ -62,4 +62,3 @@ ninja = {
   age: 40,
   // skills: []
 }
-
