@@ -1,3 +1,4 @@
+/*
 // explicit types
 let character: string;
 let age: number;
@@ -44,3 +45,4 @@ ninjaTwo = {
     beltColour: 'black'
     // skills: []
 }
+*/
