@@ -24,6 +24,30 @@
     // echo strtolower($name);
     // echo str_replace('m', 'w', $name); //replacing m's with w's in given string
 
+    // NUMBERS
+    // $radius = 25; // integer
+    // $pi = 3.14; // float
+
+    // operators
+    //basic *, /, +, -, **
+    // echo $pi * $radius ** 2;
+    // BIDMAS:
+    // echo 2 * (4+9) / 3;
+
+    // increment and decrement operators:
+    // $radius++; // adds 1
+    // $radius--; // subtracts 1
+
+    // shorthand operators:
+    // $age = 20;
+    // $age += 10; // adds 10
+    // $age -= 10; etc
+
+    // number functions:
+    // echo floor($pi); // floors down to nearest integer
+    // echo ceil($pi) // rounds up to nearest int
+    // echo pi(); // returns he value of pi
+
 ?>
 
 <!DOCTYPE html>
