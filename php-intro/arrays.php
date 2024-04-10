@@ -36,6 +36,30 @@ $ninjasThree = array_merge($ninjasOne, $ninjasTwo);
 
 print_r($ninjasThree);
 
+// multi-dimensional arrays
+// $blogs = [
+//     ['mario party', 'mario', 'lorem', 30],
+//     ['mario kart cheats', 'toad', 'lorem', 25],
+//     ['zelda hidden chests', 'link', 'lorem', 50]
+// ];
+
+// print_r($blogs);
+
+// associative arrays inside an indexed array:
+$blogs = [
+    ['title' => 'mario party', 'author' => 'mario','content' => 'lorem', 'likes' => 30],
+    ['title' => 'mario kart cheats', 'author' => 'toad', 'content' => 'lorem', 'likes' => 25],
+    ['title' => 'zelda hidden chests', 'author' => 'link', 'content' => 'lorem', 'likes' => 50]
+];
+
+// echo $blogs[2]['author'];
+// echo count($blogs);
+$blogs['title' => 'castle party', 'author' => 'peach', 'content' => 'lorem', 'likes' => 100]; //adding new element
+
+$popped = array_pop($blogs); // removes last element from given array, returns this element
+// print_r($popped);
+
+
 ?>
 
 <!DOCTYPE html>
