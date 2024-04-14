@@ -30,6 +30,18 @@ foreach($products as $product) {
     //     echo $product['name'] . '<br />';
     // }
 
+    // break - exits the loop
+
+    if($product['name'] === 'lightning bolt') {
+        break;
+    }
+
+    if($product['price'] > 15) {
+        continue;
+    }
+
+    echo $product['name'] . '<br />';
+
 }
 
 
