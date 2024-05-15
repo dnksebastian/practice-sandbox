@@ -2,8 +2,14 @@
 
 class User {
     // properties
-    public $username = 'ryu';
-    public $email = 'ryu@thenetninja.co.uk';
+    public $username;
+    private $email;
+
+    // constructor method
+    public function __construct($username, $email) {
+        $this->username = $username;
+        $this->email = $email;
+    }
 
     // methods
     public function addFriend() {
@@ -12,8 +18,8 @@ class User {
 
 }
 
-$userOne = new User(); // creating new instance of class
-$userTwo = new User();
+$userOne = new User('mario', 'mario@thenetninja.co.uk'); // creating new instance of class
+$userTwo = new User('luigi', 'luigi@thenetninja.co.uk');
 
 get_class($userOne); // tells what class the object is based on
 echo 'the class is ' . get_class($userTwo);
@@ -34,6 +40,9 @@ echo $userTwo->addFriend() . '<br />';
 // print_r(get_class_vars('User'));
 // print_r(get_class_methods('User'));
 
+// access modifiers
+// $userOne->username = 3; // is possible when property is public
+// $userOne->email = 3; // is not possible when property is private (outside of the class)
 
 
 ?>
