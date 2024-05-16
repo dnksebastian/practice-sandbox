@@ -16,6 +16,18 @@ class User {
         return "$this->username added a new friend";
     }
 
+    // getters
+    public function getEmail() {
+        return $this->email;
+    }
+
+    // setters
+    public function setEmail($email) {
+        if (strpos($email, '@') > -1) {
+            $this->email = $email;
+        }
+    }
+
 }
 
 $userOne = new User('mario', 'mario@thenetninja.co.uk'); // creating new instance of class
@@ -43,6 +55,13 @@ echo $userTwo->addFriend() . '<br />';
 // access modifiers
 // $userOne->username = 3; // is possible when property is public
 // $userOne->email = 3; // is not possible when property is private (outside of the class)
+
+// using getters
+echo $userOne->getEmail() . '<br />';
+echo $userTwo->getEmail() . '<br />';
+
+// using setter
+$userOne->setEmail('yoshi@thenetninja.co.uk');
 
 
 ?>
