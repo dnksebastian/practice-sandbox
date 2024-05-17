@@ -30,8 +30,28 @@ class User {
 
 }
 
+// class inheritance
+class AdminUser extends User {
+
+    public $level;
+
+    public function __construct($username, $email, $level) {
+        $this->level = $level;
+        parent::__construct($username, $email); // calling parent constructor method
+    }
+
+
+}
+
 $userOne = new User('mario', 'mario@thenetninja.co.uk'); // creating new instance of class
 $userTwo = new User('luigi', 'luigi@thenetninja.co.uk');
+
+$userThree = new AdminUser('yoshi', 'yoshi@thenetninja.co.uk', 5); // inherits from User
+
+
+// echo $userThree->username . '<br />';
+// echo $userThree->getEmail() . '<br />';
+// echo $userThree->username . '<br />';
 
 get_class($userOne); // tells what class the object is based on
 echo 'the class is ' . get_class($userTwo);
