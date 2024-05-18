@@ -3,7 +3,9 @@
 class User {
     // properties
     public $username;
-    private $email;
+    protected $email; // available in subclasses
+    public $role = 'member';
+    private $age; // available only in current class
 
     // constructor method
     public function __construct($username, $email) {
@@ -14,6 +16,10 @@ class User {
     // methods
     public function addFriend() {
         return "$this->username added a new friend";
+    }
+
+    public function message() {
+        return "$this->email sent a new message";
     }
 
     // getters
@@ -34,11 +40,16 @@ class User {
 class AdminUser extends User {
 
     public $level;
+    public $role = 'admin'; // overrides the property from User class
 
     public function __construct($username, $email, $level) {
         $this->level = $level;
         parent::__construct($username, $email); // calling parent constructor method
     }
+
+    public function message() {
+        return "$this->email, an admin, sent a new message"; // wont work if the property is private, but works when its protected
+    } // overrides method from User class
 
 
 }
@@ -47,6 +58,11 @@ $userOne = new User('mario', 'mario@thenetninja.co.uk'); // creating new instanc
 $userTwo = new User('luigi', 'luigi@thenetninja.co.uk');
 
 $userThree = new AdminUser('yoshi', 'yoshi@thenetninja.co.uk', 5); // inherits from User
+
+// echo $userOne->role . '<br />';
+// echo $userThree->role . '<br />';
+
+// echo $userOne->message() . '<br />';
 
 
 // echo $userThree->username . '<br />';
