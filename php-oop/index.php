@@ -13,6 +13,16 @@ class User {
         $this->email = $email;
     }
 
+    public function __destruct() {
+        // cleanup, run final code whenever the last reference to an object instance of that class is removed
+        echo "the user $this->username was removed <br />";
+    }
+
+    public function __clone() {
+        // runs for the instance being created by cloning
+        $this->username = $this->username . '(cloned) <br />';
+    }
+
     // methods
     public function addFriend() {
         return "$this->username added a new friend";
@@ -98,6 +108,10 @@ echo $userTwo->getEmail() . '<br />';
 
 // using setter
 $userOne->setEmail('yoshi@thenetninja.co.uk');
+
+// magic methods - destruct & clone
+$userFour = clone $userOne;
+echo $userFour->username;
 
 
 ?>
