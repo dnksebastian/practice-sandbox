@@ -26,7 +26,7 @@ app.post('/books', (req, res) => {
 
   BOOKS_DATA.push({id, title, author});
 
-  res.redirect(`/books/${id}`)
+  res.redirect('/books/' + id)
 });
 
 app.get('/books/:id', (req, res) => {
@@ -34,6 +34,13 @@ app.get('/books/:id', (req, res) => {
   const book = BOOKS_DATA.find(b => b.id === id);
 
   res.send(createBookTemplate(book));
+});
+
+app.delete('/books/:id', (req, res) => {
+  const idx = BOOKS_DATA.findIndex(b => b.id === req.params.id);
+  BOOKS_DATA.splice(idx, 1);
+
+  res.send();
 });
 
 
