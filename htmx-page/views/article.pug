@@ -4,8 +4,7 @@ block content
   main
     h2 #{article.name}
     p #{article.body}
-    a.btn(
-      hx-get="/"
-      hx-target="body"
-      hx-push-url="true" 
+    a(
+      href='/'
+      hx-boost="true"
     ) Back to all Articles
